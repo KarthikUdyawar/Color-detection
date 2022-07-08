@@ -1,5 +1,5 @@
 {
-  "name": "Color-detection-server",
+  "name": "color-detection-server",
   "version": "0.1.0",
   "description": "Server for Color-detection",
   "main": "index.js",
@@ -7,6 +7,11 @@
   "author": "Karthik Udyawar",
   "license": "MIT",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
