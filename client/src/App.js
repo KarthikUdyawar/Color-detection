@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useGenerateRandomColor from "./hooks/useGenerateRandomColor";
+import useGetData from "./hooks/useGetData";
 import usePostData from "./hooks/usePostData";
 import styles from "./styles";
 
@@ -49,6 +50,9 @@ function App() {
             </button>
             <button onClick={() => chooseColor(1)} style={styles.button}>
               Black
+            </button>
+            <button onClick={useGetData} style={styles.button}>
+              Download .csv
             </button>
           </div>
         </div>
