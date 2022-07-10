@@ -1,8 +1,7 @@
 import fs from "fs";
-import path from "path";
 
-const __dirname = path.resolve();
-const DIR_PATH = path.join(__dirname, "/database/ColorData.csv");
+import DIR_PATH from "../utils/getDataPath.js";
+
 const CSV_HEADER = "Red,Green,Blue,Output\n";
 
 function fileHandler(mode, data) {
