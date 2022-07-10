@@ -1,4 +1,6 @@
-import fileHandler from "../utils/fileHandler.js";
+import ErrorHandler from "../middleware/errorHandler.js";
+import HttpStatus from "../utils/httpStatus.js";
+import fileHandler from "../middleware/fileHandler.js";
 
 export const postData = async (req, res) => {
   try {
@@ -14,11 +16,13 @@ export const postData = async (req, res) => {
       csvData = `${RInputData},${GInputData},${BInputData},${outputData}\n`;
       fileHandler("a", csvData);
     }
-    res.send("Successfully");
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: `${error.name}: ${error.message}`,
+    res.status(HttpStatus.OK).json({
+      isSuccessful: true,
+      status: HttpStatus.OK,
+      message: "Data posted successfully",
+      info: data,
     });
+  } catch (error) {
+    ErrorHandler(error, res);
   }
 };
