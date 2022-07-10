@@ -131,3 +131,6 @@ backup
 
 # todo
 .todo
+
+# python env
+env
