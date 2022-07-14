@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { trackPromise } from "react-promise-tracker";
 
 const usePredictData = () => {
   const [result, setResult] = useState(1);
 
   const predictData = (R, G, B) => {
+    trackPromise(
       axios({
         url: "http://localhost:4000/api/v1/predictData",
         method: "GET",
@@ -19,6 +21,7 @@ const usePredictData = () => {
           console.log(err);
         })
     );
+  };
   return { result, predictData };
 };
 
