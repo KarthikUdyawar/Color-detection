@@ -1,4 +1,6 @@
 import child_process from "child_process";
+import ErrorHandler from "../middleware/errorHandler.js";
+import HttpStatus from "../utils/httpStatus.js";
 
 export const predictData = async (req, res) => {
   try {
@@ -16,20 +18,17 @@ export const predictData = async (req, res) => {
       }
     );
     pyPro.stdout.on("data", (data) => {
-      res.status(200).json({ output: parseInt(data.toString()[0]) });
+      res.status(HttpStatus.OK).json({
+        isSuccessful: true,
+        status: HttpStatus.OK,
+        message: "Data predicted successfully",
+        info: { output: parseInt(data.toString()[0]) },
+      });
     });
     pyPro.stderr.on("data", (err) => {
-      console.log(String(err));
-    });
-    pyPro.on("close", (code, signal) => {
-      console.log(
-        `child process closed with code ${code} and signal ${signal}`
-      );
+      ErrorHandler(err, res);
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: `${error.name}: ${error.message}`,
-    });
+    ErrorHandler(error, res);
   }
 };
