@@ -47,6 +47,14 @@ function App() {
     alignItems: "center",
   };
 
+  const TextColor = {
+    color: `${predictColor(result)}`,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "50px",
+  };
+
   return (
     <div className="App">
       <div className="bg-color" style={bgColor}>
@@ -55,17 +63,7 @@ function App() {
             <h2 style={styles.blackColorText}>This is the black text</h2>
             <h2 style={styles.whiteColorText}>This is the white text</h2>
             <div className="predict">
-              <h2
-                style={{
-                  color: `${predictColor(result)}`,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  fontSize: "50px",
-                }}
-              >
-                This text is better
-              </h2>
+              <h2 style={TextColor}>This text is better</h2>
               <div className="loading">
                 <LoadingIndicator />
               </div>
