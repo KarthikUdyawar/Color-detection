@@ -6,6 +6,8 @@ import morgan from "morgan";
 
 import router from "./api/routers/Data.routes.js";
 import config from "./config/index.js";
+import morganMiddleware from "./api/middleware/Logger/index.js";
+import logger from "./api/utils/logger.js";
 
 // Config
 const PORT = config.PORT;
@@ -14,7 +16,8 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(morgan("dev"));
+app.use(morganMiddleware);
+// app.use(morgan("dev"));
 app.use(cors());
 
 // Test API to check API is running
@@ -26,4 +29,4 @@ app.get("/", (req, res) => {
 app.use("/api/v1", router);
 
 // Listen server
-app.listen(PORT, () => console.log(`Server started on post ${PORT}`));
+app.listen(PORT, () => logger.info(`Server started on post ${PORT}`));
