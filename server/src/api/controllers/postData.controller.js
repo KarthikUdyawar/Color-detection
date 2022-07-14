@@ -1,6 +1,6 @@
-import ErrorHandler from "../middleware/errorHandler.js";
+import ErrorHandler from "../middleware/Handler/errorHandler.js";
+import fileHandler from "../middleware/Handler/fileHandler.js";
 import HttpStatus from "../utils/httpStatus.js";
-import fileHandler from "../middleware/fileHandler.js";
 
 export const postData = async (req, res) => {
   try {

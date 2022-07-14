@@ -1,4 +1,4 @@
-import HttpStatus from "../utils/httpStatus.js";
+import HttpStatus from "../../utils/httpStatus.js";
 
 const ErrorHandler = (error, res) => {
   const isSuccessful = error.isSuccessful || false;

@@ -1,6 +1,6 @@
 import { writeFileSync, appendFileSync } from "fs";
 
-import { CSV_PATH } from "../utils/getPath.js";
+import { CSV_PATH } from "../../utils/getPath.js";
 
 const CSV_HEADER = "Red,Green,Blue,Output\n";
 
