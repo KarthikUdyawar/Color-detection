@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { getData } from "../controllers/getData.js";
-import { postData } from "../controllers/postData.js";
-import { predictData } from "../controllers/predictData.js";
+import { getData } from "../controllers/getData.controller.js";
+import { postData } from "../controllers/postData.controller.js";
+import { predictData } from "../controllers/predictData.controller.js";
 
 const router = Router();
 

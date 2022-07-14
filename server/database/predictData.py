@@ -1,8 +1,8 @@
 import sys
+import os
 from joblib import load
 
-filename = "D:/Code/JavaScript/AI/Color-detection/server/database/model.xz"
-
+filename = os.path.abspath("database/model.xz")
 clf = load(filename)
 
 r = float(sys.argv[1])
