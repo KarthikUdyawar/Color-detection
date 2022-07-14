@@ -5,9 +5,10 @@ import express from "express";
 import morgan from "morgan";
 
 import router from "./api/routers/Data.routes.js";
+import config from "./config/index.js";
 
 // Config
-const PORT = 4000;
+const PORT = config.PORT;
 const app = express();
 
 // Middleware
