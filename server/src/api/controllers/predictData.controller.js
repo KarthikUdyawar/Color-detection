@@ -1,5 +1,5 @@
 import child_process from "child_process";
-import ErrorHandler from "../middleware/errorHandler.js";
+import ErrorHandler from "../middleware/Handler/errorHandler.js";
 import HttpStatus from "../utils/httpStatus.js";
 import { PY_PATH } from "../utils/getPath.js";
 

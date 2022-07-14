@@ -4,7 +4,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 
-import router from "./routers/Data.routes.js";
+import router from "./api/routers/Data.routes.js";
 
 // Config
 const PORT = 4000;
