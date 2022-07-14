@@ -1,18 +1,14 @@
 import child_process from "child_process";
 import ErrorHandler from "../middleware/errorHandler.js";
 import HttpStatus from "../utils/httpStatus.js";
+import { PY_PATH } from "../utils/getPath.js";
 
 export const predictData = async (req, res) => {
   try {
     let spawn = child_process.spawn;
     let pyPro = spawn(
       "python",
-      [
-        "D:/Code/JavaScript/AI/Color-detection/server/database/predictData.py",
-        req.query.r,
-        req.query.g,
-        req.query.b,
-      ],
+      [PY_PATH, req.query.r, req.query.g, req.query.b],
       {
         detached: true,
       }
