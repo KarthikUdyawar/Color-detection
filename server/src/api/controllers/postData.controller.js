@@ -5,11 +5,9 @@ import HttpStatus from "../utils/httpStatus.js";
 
 export const postData = async (req, res) => {
   try {
-    fileHandler("w");
     const { data } = req.body;
     const isValid = postDataValidation(data);
 
-      fileHandler("a", csvData);
     if (!isValid) {
       res.status(HttpStatus.notAcceptable).json({
         isSuccessful: false,
@@ -26,6 +24,7 @@ export const postData = async (req, res) => {
     const BInputData = data.input.b;
     const outputData = data.output;
     csvData = `${RInputData},${GInputData},${BInputData},${outputData}\n`;
+    fileHandler(csvData);
     res.status(HttpStatus.OK).json({
       isSuccessful: true,
       status: HttpStatus.OK,
