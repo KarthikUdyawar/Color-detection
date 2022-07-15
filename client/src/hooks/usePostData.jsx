@@ -6,7 +6,7 @@ const usePostData = () => {
       url: "http://localhost:4000/api/v1/postData",
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      data: JSON.stringify({ data: arr }),
+      data: JSON.stringify({ data: arr[arr.length - 1] }),
     })
       .then((res) => {
         console.log(res.data);
