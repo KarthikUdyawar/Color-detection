@@ -7,10 +7,14 @@ import config from "./config/index.js";
 import morganMiddleware from "./api/middleware/Logger/index.js";
 import { speedLimiter, limiter } from "./api/middleware/Limiter/index.js";
 import logger from "./api/utils/logger.js";
+import path from "path";
 
 // Config
 const PORT = config.PORT;
 const app = express();
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "./public")));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
