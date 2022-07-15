@@ -5,7 +5,7 @@ const ErrorHandler = (error, res) => {
   const status = error.status || HttpStatus.serverError;
   const message = error.message || "Server Error";
   const info = error.stack || "Something went wrong";
-  res.status(status).send({
+  res.status(status).json({
     isSuccessful,
     status,
     message,
