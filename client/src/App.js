@@ -8,14 +8,19 @@ import LoadingIndicator from "./components/LoadingIndicator";
 
 function App() {
   const { color, generateColor } = useGenerateRandomColor();
-  const PostData  = usePostData();
+  const PostData = usePostData();
   const { result, predictData } = usePredictData();
   const [value, setValue] = useState(1);
-  const [arr, setArr] = useState([]);
+  const [arr, setArr] = useState([
+    {
+      input: { r: color.r, g: color.g, b: color.b },
+      output: value,
+    },
+  ]);
 
   useEffect(() => {
-    PostData(arr);
     predictData(color.r, color.g, color.b);
+    PostData(arr);
   });
 
   const predictColor = (c) => {
@@ -27,7 +32,7 @@ function App() {
     setArr([
       ...arr,
       {
-        input: { color },
+        input: { r: color.r, g: color.g, b: color.b },
         output: value,
       },
     ]);

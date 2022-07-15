@@ -2,7 +2,7 @@ import sys
 import os
 from joblib import load
 
-filename = os.path.abspath("database/model.xz")
+filename = os.path.abspath("src/config/database/model.xz")
 clf = load(filename)
 
 r = float(sys.argv[1])
