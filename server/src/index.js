@@ -1,12 +1,11 @@
 // Imports
 import bodyParser from "body-parser";
-import cors from "cors";
 import express from "express";
-import morgan from "morgan";
-
+import { Helmet, Cors } from "./api/middleware/Header/index.js";
 import router from "./api/routers/Data.routes.js";
 import config from "./config/index.js";
 import morganMiddleware from "./api/middleware/Logger/index.js";
+import { speedLimiter, limiter } from "./api/middleware/Limiter/index.js";
 import logger from "./api/utils/logger.js";
 
 // Config
@@ -17,8 +16,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morganMiddleware);
-// app.use(morgan("dev"));
-app.use(cors());
+app.use(Helmet);
+app.use(Cors);
+app.use(speedLimiter);
+app.use(limiter);
 
 // Test API to check API is running
 app.get("/", (req, res) => {
