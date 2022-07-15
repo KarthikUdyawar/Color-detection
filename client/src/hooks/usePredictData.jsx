@@ -14,7 +14,6 @@ const usePredictData = () => {
       })
         .then((res) => {
           console.log(res.data);
-          console.log(res.data.info.output);
           setResult(res.data.info.output);
         })
         .catch((err) => {
