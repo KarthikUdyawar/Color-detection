@@ -134,3 +134,6 @@ backup
 
 # python env
 env
+
+# jupyter notebook
+.ipynb_checkpoints
