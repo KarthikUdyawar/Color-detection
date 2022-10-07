@@ -272,10 +272,10 @@ express-rate-limit@^6.5.1:
   resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-6.5.1.tgz#2b4c329f03265f94f19613519b169afbd018e783"
   integrity sha512-pxO6ioBLd3i8IHL+RmJtL4noYzte5fugoMdaDabtU4hcg53+x0QkTwfPtM7vWD0YUaXQgNj9NRdzmps+CHEHlA==
 
-express-slow-down@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/express-slow-down/-/express-slow-down-1.4.0.tgz#89e0aef6c3bb3602b70f06e0824889bd2362cc21"
-  integrity sha512-Tw5aa0plPj2STiuc2SyMw2VSjMvBgLGQHHoPhkIL4iPQcFZDueWBaiLxFZ3SrwrJhiu3b3sHNcsP6lXeWnbwAw==
+express-slow-down@^1.4.1:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/express-slow-down/-/express-slow-down-1.5.0.tgz#7222ffb72e7f085f9eed19f60071d239e3d6657e"
+  integrity sha512-GCoa2a+mf7CE7C00TIoPMbcgQSXxEVolSAbP97uHyzVy87ssp0/IDtJ/GBxjv+gnfM2R1l2QcEfYixFJK75n7w==
   dependencies:
     defaults "^1.0.3"
 
