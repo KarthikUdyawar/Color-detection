@@ -1,5 +1,5 @@
 ipykernel==6.16.0
-ipython==8.5.0
+ipython==8.10.0
 ipywidgets==8.0.2
 joblib==1.2.0
 matplotlib==3.6.0
@@ -8,3 +8,9 @@ opendatasets==0.1.22
 pandas==1.5.0
 scikit_learn==1.1.2
 seaborn==0.12.0
+fonttools>=4.43.0 # not directly required, pinned by Snyk to avoid a vulnerability
+pillow>=10.3.0 # not directly required, pinned by Snyk to avoid a vulnerability
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
+tornado>=6.4.1 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
